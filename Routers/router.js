@@ -43,7 +43,7 @@ router.get('/admin/viewworkers',jwtmiddleware,admincontroller.getallworkers)
 
 // admin approvel
 
-router.put('/admin/approve/:id',jwtmiddleware,admincontroller.approveProfile)
+router.put('/admin/approve/:id',admincontroller.approveProfile)
 
 
 

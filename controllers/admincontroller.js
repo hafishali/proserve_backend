@@ -57,14 +57,14 @@ exports.getallworkers=async(req,res)=>{
 // approval
 
 exports.approveProfile = async (req,res) => {
-    const { userId } = req.payload;
+    // const { userId } = req.payload;
     // console.log(`con:${userId}`);  
 
     const {id}=req.params
 
     const { name, username, email, password, phone, address, job, city, district, dailywage, coworkers, image, status } = req.body;
    
-    if(userId =='65c091bc3dd30b3790f4a0fa'){
+    // if(userId =='65c091bc3dd30b3790f4a0fa'){
         try {
             const profileupdate = await workers.findByIdAndUpdate(
                 { _id: id },
@@ -79,9 +79,9 @@ exports.approveProfile = async (req,res) => {
             res.status(401).json(err);
         }
 
-    }
-    else{
-        res.status(401).json('only admin can approve')
-    }
+    // }
+    // else{
+    //     res.status(401).json('only admin can approve')
+    // }
     
 };
