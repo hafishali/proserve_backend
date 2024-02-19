@@ -5,6 +5,7 @@ const router=new express.Router()
 const usercontroller=require('../controllers/usercontroller')
 const workcontrol=require('../controllers/workercontroller')
 const admincontroller=require('../controllers/admincontroller')
+const bookingcontroller=require('../controllers/bookingcontroller')
 const jwtmiddleware=require('../middlewares/jwt')
 const multerconfigure=require('../middlewares/multer')
 
@@ -44,6 +45,16 @@ router.get('/admin/viewworkers',jwtmiddleware,admincontroller.getallworkers)
 // admin approvel
 
 router.put('/admin/approve/:id',admincontroller.approveProfile)
+
+// user:getworker
+
+router.get('/user/viewworkers',jwtmiddleware,usercontroller.getAllworkers)
+
+// user:booking
+
+router.post('/user/book',jwtmiddleware,bookingcontroller.book)
+
+
 
 
 

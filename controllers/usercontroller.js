@@ -1,5 +1,6 @@
 // import model
 const users=require('../model/userschema')
+const workers=require('../model/workerschema')
 
 const jwt=require('jsonwebtoken')
 
@@ -54,5 +55,23 @@ exports.login=async(req,res)=>{
         }
     }catch(err){
         res.status(401).json(`register request failed due to${err}`)
+    }
+}
+
+// view workers
+
+exports.getAllworkers=async(req,res)=>{
+
+    
+
+    
+    
+    try {
+        const allworkers=await workers.find()
+        res.status(200).json(allworkers)
+        
+    } catch (err) {
+        res.status(406).json(`error occured due to ${err}`)
+        
     }
 }
