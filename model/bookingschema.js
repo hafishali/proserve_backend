@@ -2,6 +2,14 @@ const mongoose=require('mongoose')
 
 
 const bookingSchema=new mongoose.Schema({
+    worker_name:{
+        type:String,
+        require:true
+    },
+    job:{
+        type:String,
+        require:true
+    },
     name:{
         type:String,
         require:true
@@ -36,6 +44,10 @@ const bookingSchema=new mongoose.Schema({
         type:Boolean
     },
     workerId:{
+        type:String,
+        require:true
+    },
+    userId:{
         type:String,
         require:true
     }

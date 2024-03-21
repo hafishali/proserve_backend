@@ -54,6 +54,25 @@ router.get('/user/viewworkers',jwtmiddleware,usercontroller.getAllworkers)
 
 router.post('/user/book',jwtmiddleware,bookingcontroller.book)
 
+// worker:view bookings
+
+router.get('/worker/viewbookings',jwtmiddleware,bookingcontroller.getAllbookings)
+
+// worker:approve booking
+
+router.put('/booking/approve/:id',bookingcontroller.approveProfile)
+
+// user:booking history
+
+router.get('/user/viewbookings',jwtmiddleware,bookingcontroller.bookingHistory)
+
+// user:cancel booking
+
+router.delete('/booking/cancel/:id',jwtmiddleware,bookingcontroller.cancelBooking)
+
+
+
+
 
 
 
