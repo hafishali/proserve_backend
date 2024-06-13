@@ -85,3 +85,17 @@ exports.approveProfile = async (req,res) => {
     }
     
 };
+
+// get all users
+
+exports.getallusers=async(req,res)=>{
+
+    try {
+        const allusers=await users.find()
+        res.status(200).json(allusers)
+        
+    } catch (err) {
+        res.status(406).json(`error occured due to ${err}`)
+        
+    }
+}

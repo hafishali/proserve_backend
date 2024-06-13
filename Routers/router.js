@@ -71,6 +71,12 @@ router.get('/user/viewbookings',jwtmiddleware,bookingcontroller.bookingHistory)
 router.delete('/booking/cancel/:id',jwtmiddleware,bookingcontroller.cancelBooking)
 
 
+// admin:get all worker
+
+router.get('/admin/getallusers',jwtmiddleware,admincontroller.getallusers)
+
+
+
 
 
 
