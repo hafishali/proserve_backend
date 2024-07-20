@@ -16,10 +16,10 @@ router.post('/user/register',usercontroller.register)
 
 router.post('/user/login',usercontroller.login)
 
-// book works
+// google login
 
+router.post('/user/googleLogin',usercontroller.googleLogin)
 
-// get works
 
 
 // worker register

@@ -75,3 +75,22 @@ exports.getAllworkers=async(req,res)=>{
         
     }
 }
+
+// google authentication
+exports.googleLogin = async (req, res) => {
+    const { name, email } = req.body;
+    try {
+        let user = await users.findOne({ email });
+
+        if (!user) {
+            user = new users({ name, email });
+            await user.save();
+            
+        }
+
+        const token = jwt.sign({ userId: user._id }, 'secretkey');
+        res.status(200).json({ user, token });
+    } catch (error) {
+        res.status(500).json({ message: 'Google login failed', error });
+    }
+};
